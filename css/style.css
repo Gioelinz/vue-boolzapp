@@ -19,10 +19,6 @@
     height: 100vh;
 }
 
-.page-vh{
-    /* height: 90vh; */
-}
-
 
 .lh-user{
     line-height: 50px;
@@ -55,4 +51,8 @@ input{
 
 .user-chat{
     overflow-y: scroll;
+}
+
+.header-chat, .header-user{
+    height: 70px;
 }
