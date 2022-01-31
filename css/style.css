@@ -26,3 +26,10 @@
 .lh-user{
     line-height: 50px;
 }
+
+.round-notify{
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
