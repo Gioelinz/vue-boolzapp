@@ -46,6 +46,13 @@
     height: 100vh;
 }
 
+.height-left{
+    height: calc(100vh - 270px);
+}
+
+.height-right{
+    height:  calc(100vh - 180px);
+}
 
 .lh-user{
     line-height: 50px;
@@ -59,12 +66,9 @@
 }
 
 .desktop-notify{
-    min-height: 80px;
+    height: 80px;
 }
 
-.input-search{
-    min-height: 70px;
-}
 
 #search-chats{
    width: 80%;
@@ -78,9 +82,11 @@ input:focus-visible{
 input{
     border-color: transparent;
 }
-.chats{
-    min-height: calc(800px - 80px);
+
+.chat-card:hover{
+    background-color: rgba(211, 211, 211, 0.5);
 }
+
 
 .user-chat .avatars{
     min-height: 70px;
@@ -88,7 +94,6 @@ input{
 
 .user-chat{
     overflow-y: scroll;
-    min-height: 650px;
 }
 
 .header-chat, .header-user{
@@ -97,7 +102,6 @@ input{
 
 .chat-content{
     background-image: url(../img/mine.jpg);
-    min-height: 740px;
     overflow-y: scroll;
 }
 

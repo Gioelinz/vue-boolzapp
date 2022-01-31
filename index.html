@@ -20,9 +20,9 @@
     <div id="root">
         <div class="wrapper">
             <div class="container pt-4">
-                <div class="row g-0">
+                <div class="row">
                     <!-- !Sezione sinistra -->
-                    <div class="col-5">
+                    <div class="col-5 p-0">
 
                         <!-- Username -->
                         <div class="header-user bg-gray d-flex justify-content-between align-items-center">
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <!-- Tutte le chat -->
-                        <div class="chats">
+                        <div class="chats  bg-white">
                             <!-- RIcerca -->
                             <div class="input-search bg-gray d-flex justify-content-center py-3">
                                 <div class="search bg-white px-4 d-flex align-items-center">
@@ -57,8 +57,8 @@
                                 <input id="search-chats" type="text" placeholder="Cerca o inizia una nuova chat">
                             </div>
                             <!-- Contatti -->
-                            <div class="user-chat bg-white">
-                                <div class="chat-card d-flex p-3" v-for="(contact, index) in contacts">
+                            <div class="user-chat height-left">
+                                <div role="button" class="chat-card d-flex p-3" v-for="(contact, index) in contacts">
                                     <img class="avatars rounded-circle" :src="`img/avatar${contact.avatar}.jpg`"
                                         :alt="contact.name">
                                     <p class="ps-4 fs-5">{{contact.name}}</p>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <!-- !Sezione chat destra -->
-                    <div class="col-7">
+                    <div class="col-7 p-0">
                         <!-- header della chat -->
                         <div class="header-chat bg-gray d-flex justify-content-between align-items-center">
                             <div class="user-image d-flex pt-1 ps-2">
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <!-- Contenuti chat -->
-                        <main class="chat-content  p-4">
+                        <main class="chat-content height-right p-4">
                             <div class="mess user-mess">
                                 <p class="m-0 pb-2">Hai portato a spasso il cane?</p>
                                 <p class="text-gray date m-0">31/01/2022 16:14</p>
