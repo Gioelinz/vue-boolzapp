@@ -11,6 +11,14 @@
     background-color: #EAEAEA;
 }
 
+.user-mess{
+    background-color: #D5F9BA;
+}
+
+.dest-mess{
+    background-color: #FFF;
+}
+
 /* Page */
 .wrapper{
     background: rgb(0,150,136);
@@ -31,9 +39,17 @@
     border-radius: 50%;
 }
 
+.desktop-notify{
+    min-height: 80px;
+}
+
+.input-search{
+    min-height: 70px;
+}
+
 #search-chats{
    width: 80%;
-   height: 35px; 
+   height: 38px; 
 }
 
 input:focus-visible{
@@ -43,16 +59,32 @@ input:focus-visible{
 input{
     border-color: transparent;
 }
-
+.chats{
+    min-height: calc(800px - 80px);
+}
 
 .user-chat .avatars{
-    height: 70px;
+    min-height: 70px;
 }
 
 .user-chat{
     overflow-y: scroll;
+    min-height: 650px;
 }
 
 .header-chat, .header-user{
-    height: 70px;
+    min-height: 70px;
 }
+
+.chat-content{
+    background-image: url(../img/mine.jpg);
+    min-height: 740px;
+    overflow-y: scroll;
+}
+
+.message-area{
+    background-color: #F3EEEA;
+    min-height: 60px;
+}
+
+

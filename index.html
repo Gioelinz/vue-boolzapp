@@ -19,7 +19,7 @@
 <body>
     <div id="root">
         <div class="wrapper">
-            <div class="container pt-5">
+            <div class="container pt-4">
                 <div class="row g-0">
                     <!-- !Sezione sinistra -->
                     <div class="col-5">
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <!-- Tutte le chat -->
-                        <div class="chats h-100">
+                        <div class="chats">
                             <!-- RIcerca -->
                             <div class="input-search bg-gray d-flex justify-content-center py-3">
                                 <div class="search bg-white px-4 d-flex align-items-center">
@@ -57,7 +57,7 @@
                                 <input id="search-chats" type="text" placeholder="Cerca o inizia una nuova chat">
                             </div>
                             <!-- Contatti -->
-                            <div class="user-chat bg-white h-100">
+                            <div class="user-chat bg-white">
                                 <div class="chat-card d-flex p-3" v-for="(contact, index) in contacts">
                                     <img class="avatars rounded-circle" :src="`img/avatar${contact.avatar}.jpg`"
                                         :alt="contact.name">
@@ -71,7 +71,7 @@
                         <!-- header della chat -->
                         <div class="header-chat bg-gray d-flex justify-content-between align-items-center">
                             <div class="user-image d-flex pt-1 ps-2">
-                                <img class="avatars rounded-circle" :src="`img/avatar${user.avatar}.jpg`"
+                                <img class="avatars rounded-circle pe-3" :src="`img/avatar${user.avatar}.jpg`"
                                     alt="user.name">
                                 <div>
                                     <p class="m-0">{{ user.name }}</p>
@@ -84,7 +84,17 @@
                                 <i class="fas fa-ellipsis-v fa-lg text-gray"></i>
                             </div>
                         </div>
-                        <main class="chat-content"></main>
+                        <!-- Contenuti chat -->
+                        <main class="chat-content">
+
+                        </main>
+                        <!-- Area messaggi -->
+                        <div class="message-area d-flex justify-content-around align-items-center px-2">
+                            <i role="button" class="far fa-smile fa-lg"></i>
+                            <input class="py-3 rounded-2" id="search-chats" type="text"
+                                placeholder="Scrivi un messaggio">
+                            <i role="button" class="fas fa-microphone fa-lg"></i>
+                        </div>
                     </div>
                 </div>
             </div>
