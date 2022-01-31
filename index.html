@@ -17,7 +17,36 @@
 </head>
 
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <div class="wrapper">
+            <div class="container pt-5">
+                <div class="row page-vh">
+                    <!-- !Sezione sinistra -->
+                    <div class="col-5">
+                        <div class="header-user d-flex justify-content-between align-items-center">
+                            <div class="user-image d-flex pt-1 ps-2">
+                                <img class="avatars rounded-circle" :src="`img/avatar${user.avatar}.jpg`"
+                                    :alt="user.name">
+                                <p class="lh-user">{{ user.name }}</p>
+                            </div>
+                            <div class="user-buttons pe-3" role="button">
+                                <i class="fas fa-circle-notch fa-lg text-gray"></i>
+                                <i class="fas fa-comment-alt fa-lg text-gray px-2"></i>
+                                <i class="fas fa-ellipsis-v fa-lg text-gray"></i>
+                            </div>
+                        </div>
+                        <div class="desktop-notify"></div>
+                        <div class="chats"></div>
+                    </div>
+                    <!-- !Sezione chat destra -->
+                    <div class="col-7">
+                        <div class="header-chat"></div>
+                        <main class="chat-content"></main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
