@@ -20,7 +20,7 @@
 }
 
 .page-vh{
-    height: 90vh;
+    /* height: 90vh; */
 }
 
 
@@ -46,4 +46,13 @@ input:focus-visible{
 
 input{
     border-color: transparent;
+}
+
+
+.user-chat .avatars{
+    height: 70px;
+}
+
+.user-chat{
+    overflow-y: scroll;
 }
