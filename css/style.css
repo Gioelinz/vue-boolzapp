@@ -7,6 +7,10 @@
     color: #B1B1B1;
 }
 
+.bg-gray{
+    background-color: #EAEAEA;
+}
+
 /* Page */
 .wrapper{
     background: rgb(0,150,136);
@@ -19,9 +23,6 @@
     height: 90vh;
 }
 
-.header-user{
-    background-color: #EAEAEA;
-}
 
 .lh-user{
     line-height: 50px;
@@ -32,4 +33,17 @@
     height: 50px;
     width: 50px;
     border-radius: 50%;
+}
+
+#search-chats{
+   width: 80%;
+   height: 35px; 
+}
+
+input:focus-visible{
+    outline: 0;
+}
+
+input{
+    border-color: transparent;
 }
