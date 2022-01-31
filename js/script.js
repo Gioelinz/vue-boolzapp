@@ -23,8 +23,12 @@ const app = new Vue({
                 avatar: '_3',
             },
             {
-                name: 'Luisa',
+                name: 'Giovanni',
                 avatar: '_4',
+            },
+            {
+                name: 'Francesco',
+                avatar: '_5',
             },
         ]
     }

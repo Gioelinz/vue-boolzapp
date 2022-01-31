@@ -24,12 +24,14 @@
 
 .user-mess{
     background-color: #D5F9BA;
-    margin-left: 400px;
+    border-radius: 10px;
+    /* margin-left: 400px; */
 }
 
 .dest-mess{
     background-color: #FFF;
-    margin-left: 15px;
+    border-radius: 10px;
+   /*  margin-left: 15px; */
 }
 
 .date{
