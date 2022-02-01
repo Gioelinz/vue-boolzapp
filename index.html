@@ -86,13 +86,10 @@
                         </div>
                         <!-- Contenuti chat -->
                         <main class="chat-content height-right p-4">
-                            <div class="messages" v-for="(contact, index) in contacts">
-                                <div class="sent-mess rounded-3 mt-1" v-for="(message, index) in contact.messages"
-                                    v-if="message.status === 'sent'">
-                                    <p class="m-0 pt-2 ps-3 pe-5">{{ message.text }}</p>
-                                    <p class="text-gray date m-0 pt-2 pe-1 text-end">{{ message.date }}</p>
-                                </div>
-                                <div class="received-mess rounded-3 mt-1" v-else>
+                            <div class="messages" v-for="(contact, index) in contacts" v-if="contact.visible">
+                                <div class="rounded-3 mt-1"
+                                    :class="[message.status === 'sent' ? 'sent-mess' : 'received-mess']"
+                                    v-for="(message, index) in contact.messages">
                                     <p class="m-0 pt-2 ps-3 pe-5">{{ message.text }}</p>
                                     <p class="text-gray date m-0 pt-2 pe-1 text-end">{{ message.date }}</p>
                                 </div>
