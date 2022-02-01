@@ -6,6 +6,8 @@ const app = new Vue({
     el: '#root',
     data: {
 
+        newMsg: "",
+        currentIndex: 0,
         user: {
             name: 'Gioelinz',
             avatar: '_io'
@@ -48,8 +50,8 @@ const app = new Vue({
                 },
                 {
                     date: '20/03/2020 16:35:00',
-                    text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                    status: 'received'
+                    text: 'Vabene, ci aggiorniamo!',
+                    status: 'sent'
                 }
                 ],
             },
@@ -91,7 +93,6 @@ const app = new Vue({
                 ],
             },
         ],
-        currentIndex: 0,
     },
     methods: {
         changeContact(index) {
@@ -100,6 +101,27 @@ const app = new Vue({
 
         setContact(index) {
             return index === this.currentIndex
+        },
+
+        sendMsg() {
+
+            const formattedMsg = this.newMsg.charAt(0).toUpperCase() + this.newMsg.substring(1);
+            const trimmedMsg = formattedMsg.trim()
+
+            const templateMsg = {
+                date: '01/02/2022 15:30:55',
+                text: trimmedMsg,
+                status: 'sent'
+            };
+
+            if (trimmedMsg) {
+                this.contacts.forEach((c, i) => {
+                    if (this.currentIndex === i) {
+                        c.messages.push(templateMsg)
+                    }
+                })
+            };
+            this.newMsg = "";
         }
     }
 })

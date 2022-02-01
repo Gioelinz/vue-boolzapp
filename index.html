@@ -77,7 +77,11 @@
                                     :alt="user.name">
                                 <div>
                                     <p class="m-0">{{ contact.name }}</p>
-                                    <p class="text-muted"> Ultimo accesso alle</p>
+                                    <!-- todo aggiungere ultimo accesso -->
+                                    <!--  <p class="text-muted" v-for="(message, index) in contact.messages"
+                                        v-if="setContact(index)">
+                                        Ultimo accesso alle {{ message.date }}
+                                    </p> -->
                                 </div>
                             </div>
                             <div class="user-buttons pe-3" role="button">
@@ -115,7 +119,7 @@
                         <div class="message-area d-flex justify-content-around align-items-center px-2">
                             <i role="button" class="far fa-smile fa-lg"></i>
                             <input class="py-3 rounded-2" id="search-chats" type="text"
-                                placeholder="Scrivi un messaggio">
+                                placeholder="Scrivi un messaggio" v-model="newMsg" @keyup.enter="sendMsg">
                             <i role="button" class="fas fa-microphone fa-lg"></i>
                         </div>
                     </div>
