@@ -15,12 +15,12 @@
 /* Messages */
 
 
-.user-mess{
+.sent-mess{
     background-color: #D5F9BA;
     margin-left: 60%;
 }
 
-.dest-mess{
+.received-mess{
     background-color: #FFF;
     margin-right: 60%;
 }
