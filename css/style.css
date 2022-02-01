@@ -80,6 +80,10 @@ input{
     background-color: rgba(211, 211, 211, 0.5);
 }
 
+.activecard{
+    background-color: rgba(211, 211, 211, 0.5);
+}
+
 
 .user-chat .avatars{
     min-height: 70px;

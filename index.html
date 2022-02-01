@@ -58,7 +58,9 @@
                             </div>
                             <!-- Contatti -->
                             <div class="user-chat height-left">
-                                <div role="button" class="chat-card d-flex p-3" v-for="(contact, index) in contacts">
+                                <div role="button" class="chat-card d-flex p-3"
+                                    :class="{activecard: index === currentIndex}" v-for="(contact, index) in contacts"
+                                    @click="changeContact(index)">
                                     <img class="avatars rounded-circle" :src="`img/avatar${contact.avatar}.jpg`"
                                         :alt="contact.name">
                                     <p class="ps-4 fs-5">{{contact.name}}</p>
@@ -69,12 +71,13 @@
                     <!-- !Sezione chat destra -->
                     <div class="col-7 p-0">
                         <!-- header della chat -->
-                        <div class="header-chat bg-gray d-flex justify-content-between align-items-center">
+                        <div class="header-chat bg-gray d-flex justify-content-between align-items-center"
+                            v-for="(contact, index) in contacts" v-if="contact.visible">
                             <div class="user-image d-flex pt-1 ps-2">
-                                <img class="avatars rounded-circle pe-3" :src="`img/avatar${user.avatar}.jpg`"
+                                <img class="avatars rounded-circle pe-3" :src="`img/avatar${contact.avatar}.jpg`"
                                     :alt="user.name">
                                 <div>
-                                    <p class="m-0">{{ user.name }}</p>
+                                    <p class="m-0">{{ contact.name }}</p>
                                     <p class="text-muted"> Ultimo accesso alle</p>
                                 </div>
                             </div>
