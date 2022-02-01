@@ -100,7 +100,7 @@ const app = new Vue({
         },
 
         setContact(index) {
-            return index === this.currentIndex
+            return index === this.currentIndex;
         },
 
         sendMsg() {

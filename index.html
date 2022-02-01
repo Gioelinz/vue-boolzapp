@@ -78,13 +78,13 @@
                                 <div>
                                     <p class="m-0">{{ contact.name }}</p>
                                     <!-- todo aggiungere ultimo accesso -->
-                                    <!--  <p class="text-muted" v-for="(message, index) in contact.messages"
-                                        v-if="setContact(index)">
+                                    <p class="text-muted" v-for="(message, index) in contact.messages"
+                                        v-if="contact.messages.length - 1 == index">
                                         Ultimo accesso alle {{ message.date }}
-                                    </p> -->
+                                    </p>
                                 </div>
                             </div>
-                            <div class="user-buttons pe-3" role="button">
+                            <div class=" user-buttons pe-3" role="button">
                                 <i class="fas fa-search fa-lg text-gray"></i>
                                 <i class="fas fa-paperclip fa-lg text-gray px-2"></i>
                                 <i class="fas fa-ellipsis-v fa-lg text-gray"></i>
