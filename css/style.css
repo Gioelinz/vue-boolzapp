@@ -11,27 +11,18 @@
     background-color: #EAEAEA;
 }
 
-.mess{
-    width: 280px;
-    height: 60px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 15px;
-    margin-top: 15px;
-}
+
+/* Messages */
+
 
 .user-mess{
     background-color: #D5F9BA;
-    border-radius: 10px;
-    /* margin-left: 400px; */
+    margin-left: 60%;
 }
 
 .dest-mess{
     background-color: #FFF;
-    border-radius: 10px;
-   /*  margin-left: 15px; */
+    margin-right: 60%;
 }
 
 .date{
