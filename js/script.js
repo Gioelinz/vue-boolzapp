@@ -114,14 +114,25 @@ const app = new Vue({
                 status: 'sent'
             };
 
+            const replyMsg = {
+                date: '01/02/2022 15:31:00',
+                text: 'Ok',
+                status: 'received'
+            };
+
             if (trimmedMsg) {
                 this.contacts.forEach((c, i) => {
                     if (this.currentIndex === i) {
                         c.messages.push(templateMsg)
+                        setTimeout(() => {
+                            c.messages.push(replyMsg)
+                        }, 2000);
                     }
                 })
             };
             this.newMsg = "";
-        }
+
+        },
+
     }
 })
