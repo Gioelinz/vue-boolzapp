@@ -58,9 +58,8 @@
                             </div>
                             <!-- Contatti -->
                             <div class="user-chat height-left">
-                                <div role="button" class="chat-card d-flex p-3"
-                                    :class="{activecard: index === currentIndex}" v-for="(contact, index) in contacts"
-                                    @click="changeContact(index)">
+                                <div role="button" class="chat-card d-flex p-3" :class="{activecard: setContact(index)}"
+                                    v-for="(contact, index) in contacts" @click="changeContact(index)">
                                     <img class="avatars rounded-circle" :src="`img/avatar${contact.avatar}.jpg`"
                                         :alt="contact.name">
                                     <p class="ps-4 fs-5">{{contact.name}}</p>
@@ -72,7 +71,7 @@
                     <div class="col-7 p-0">
                         <!-- header della chat -->
                         <div class="header-chat bg-gray d-flex justify-content-between align-items-center"
-                            v-for="(contact, index) in contacts" v-if="contact.visible">
+                            v-for="(contact, index) in contacts" v-if="setContact(index)">
                             <div class="user-image d-flex pt-1 ps-2">
                                 <img class="avatars rounded-circle pe-3" :src="`img/avatar${contact.avatar}.jpg`"
                                     :alt="user.name">
@@ -89,7 +88,7 @@
                         </div>
                         <!-- Contenuti chat -->
                         <main class="chat-content height-right p-4">
-                            <div class="messages" v-for="(contact, index) in contacts" v-if="contact.visible">
+                            <div class="messages" v-for="(contact, index) in contacts" v-if="setContact(index)">
                                 <div class="rounded-3 mt-1"
                                     :class="[message.status === 'sent' ? 'sent-mess' : 'received-mess']"
                                     v-for="(message, index) in contact.messages">

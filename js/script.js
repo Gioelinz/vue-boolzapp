@@ -96,6 +96,10 @@ const app = new Vue({
     methods: {
         changeContact(index) {
             return this.currentIndex = index;
+        },
+
+        setContact(index) {
+            return index === this.currentIndex
         }
     }
 })
