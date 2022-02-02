@@ -140,7 +140,7 @@ const app = new Vue({
 
         searchContact() {
             return this.contacts.filter(c => {
-                if (c.name.toLowerCase().includes(this.findContact)) {
+                if (c.name.toLowerCase().includes(this.findContact.toLowerCase())) {
                     return c.visible = true;
                 }
                 else return c.visible = false;
