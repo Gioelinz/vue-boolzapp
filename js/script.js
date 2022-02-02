@@ -147,7 +147,26 @@ const app = new Vue({
         toggleDropDown(index) {
             this.isClicked = !this.isClicked
             this.currentMessage = index;
+        },
+
+        deleteMsg(index) {
+
+            /*  this.contacts.forEach((c, i) => {
+                 if (this.currentMessage) {
+ 
+                     c.messages.splice(this.currentMessage, 1)
+                 }
+             })
+  */
+
+            this.contacts[this.currentIndex].messages = this.contacts[this.currentIndex].messages.filter((item, i) => {
+                if (index === i) return false
+                return true
+            })
+            this.isClicked = false;
         }
+
+
     },
     computed: {
         // ? Versione senza keyup nel input
