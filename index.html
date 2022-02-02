@@ -68,7 +68,12 @@
                                     v-if="contact.visible">
                                     <img class="avatars rounded-circle" :src="`img/avatar${contact.avatar}.jpg`"
                                         :alt="contact.name">
-                                    <p class="ps-4 fs-5">{{contact.name}}</p>
+                                    <div class="d-flex flex-column">
+                                        <p class="ps-4 fs-5 m-0">{{contact.name}}</p>
+                                        <p class=" text-muted m-0 ps-4" v-for="(message, index) in contact.messages"
+                                            v-if="contact.messages.length - 1 == index">Ultimo accesso alle {{
+                                            message.date }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
