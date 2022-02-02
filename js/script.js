@@ -7,6 +7,7 @@ const app = new Vue({
     data: {
 
         newMsg: "",
+        findContact: "",
         currentIndex: 0,
         user: {
             name: 'Gioelinz',
@@ -36,8 +37,8 @@ const app = new Vue({
             },
             {
                 name: 'Fabio',
-                avatar: '_2',
-                visible: false,
+                avatar: '_5',
+                visible: true,
                 messages: [{
                     date: '20/03/2020 16:30:00',
                     text: 'Ciao come stai?',
@@ -58,7 +59,7 @@ const app = new Vue({
             {
                 name: 'Samuele',
                 avatar: '_3',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: '28/03/2020 10:10:40',
                     text: 'La Marianna va in campagna',
@@ -79,7 +80,7 @@ const app = new Vue({
             {
                 name: 'Luisa',
                 avatar: '_6',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: '10/01/2020 15:30:55',
                     text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -130,8 +131,20 @@ const app = new Vue({
                 })
             };
             this.newMsg = "";
-
         },
 
+
+
+    },
+    computed: {
+
+        searchContact() {
+            return this.contacts.filter(c => {
+                if (c.name.toLowerCase().includes(this.findContact)) {
+                    return c.visible = true;
+                }
+                else return c.visible = false;
+            })
+        }
     }
 })
