@@ -109,15 +109,9 @@ const app = new Vue({
             const trimmedMsg = formattedMsg.trim()
 
             const templateMsg = {
-                date: '01/02/2022 15:30:55',
+                date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
                 text: trimmedMsg,
                 status: 'sent'
-            };
-
-            const replyMsg = {
-                date: '01/02/2022 15:31:00',
-                text: 'Ok',
-                status: 'received'
             };
 
             if (trimmedMsg) {
@@ -125,8 +119,13 @@ const app = new Vue({
                     if (this.currentIndex === i) {
                         c.messages.push(templateMsg)
                         setTimeout(() => {
+                            const replyMsg = {
+                                date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                                text: 'Ok',
+                                status: 'received'
+                            };
                             c.messages.push(replyMsg)
-                        }, 2000);
+                        }, 3000);
                     }
                 })
             };
