@@ -58,13 +58,14 @@
                                     </label>
                                 </div>
                                 <input id="search-chats" type="text" placeholder="Cerca o inizia una nuova chat"
-                                    v-model="findContact">
+                                    v-model="findContact" @keyup="searchContact">
                             </div>
                             <!-- Contatti -->
+                            <!--? 'searchContact && contact.visible' Nel v-if se uso la computed -->
                             <div class="user-chat height-left">
                                 <div role="button" class="chat-card d-flex p-3" :class="{activecard: setContact(index)}"
                                     v-for="(contact, index) in contacts" @click="changeContact(index)"
-                                    v-if="searchContact && contact.visible">
+                                    v-if="contact.visible">
                                     <img class="avatars rounded-circle" :src="`img/avatar${contact.avatar}.jpg`"
                                         :alt="contact.name">
                                     <p class="ps-4 fs-5">{{contact.name}}</p>
@@ -101,7 +102,10 @@
                                 <div class=" rounded-3 mt-1"
                                     :class="[message.status === 'sent' ? 'sent-mess' : 'received-mess']"
                                     v-for="(message, index) in contacts[currentIndex].messages">
-                                    <p class="text-message m-0 pt-2 ps-3 pe-5">{{ message.text }}</p>
+                                    <div class="d-flex">
+                                        <p class="text-message m-0 pt-2 ps-3 pe-5">{{ message.text }}</p>
+                                        <i class="fas fa-angle-down"></i>
+                                    </div>
                                     <p class="text-gray date m-0 pt-2 pe-1 text-end">{{ message.date }}</p>
                                 </div>
                             </div>

@@ -133,11 +133,6 @@ const app = new Vue({
             this.newMsg = "";
         },
 
-
-
-    },
-    computed: {
-
         searchContact() {
             return this.contacts.filter(c => {
                 if (c.name.toLowerCase().includes(this.findContact.toLowerCase())) {
@@ -146,5 +141,18 @@ const app = new Vue({
                 else return c.visible = false;
             })
         }
+
+    },
+    computed: {
+        // ? Versione senza keyup nel input
+
+        /* searchContact() {
+            return this.contacts.filter(c => {
+                if (c.name.toLowerCase().includes(this.findContact.toLowerCase())) {
+                    return c.visible = true;
+                }
+                else return c.visible = false;
+            })
+        } */
     }
 })
