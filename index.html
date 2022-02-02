@@ -58,7 +58,7 @@
                                     </label>
                                 </div>
                                 <input id="search-chats" type="text" placeholder="Cerca o inizia una nuova chat"
-                                    v-model="findContact" @keyup="searchContact">
+                                    v-model.trim="findContact" @keyup="searchContact">
                             </div>
                             <!-- Contatti -->
                             <!--? 'searchContact && contact.visible' Nel v-if se uso la computed -->
@@ -99,12 +99,17 @@
                         <!-- Contenuti chat -->
                         <main class="chat-content height-right p-4">
                             <div class="messages">
-                                <div class=" rounded-3 mt-1"
+                                <div class="mess rounded-3 mt-1"
                                     :class="[message.status === 'sent' ? 'sent-mess' : 'received-mess']"
                                     v-for="(message, index) in contacts[currentIndex].messages">
-                                    <div class="d-flex">
-                                        <p class="text-message m-0 pt-2 ps-3 pe-5">{{ message.text }}</p>
-                                        <i class="fas fa-angle-down"></i>
+                                    <p class="text-message m-0 pt-2 ps-3 pe-5">{{ message.text }}</p>
+                                    <!-- Sezione dropwond -->
+                                    <i role="button" id="my-drop" class="fas fa-angle-down"
+                                        @click="toggleDropDown(index)"></i>
+                                    <div role="button" id="my-drop-show" :class="[isClicked ? 'd-block' : 'd-none']"
+                                        v-if="currentMessage == index">
+                                        <p class="py-2 px-1 m-0">Info Messaggio</p>
+                                        <p class="py-2 px-1 m-0">Cancella Messaggio</p>
                                     </div>
                                     <p class="text-gray date m-0 pt-2 pe-1 text-end">{{ message.date }}</p>
                                 </div>

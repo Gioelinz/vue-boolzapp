@@ -9,6 +9,8 @@ const app = new Vue({
         newMsg: "",
         findContact: "",
         currentIndex: 0,
+        currentMessage: 0,
+        isClicked: false,
         user: {
             name: 'Gioelinz',
             avatar: '_io'
@@ -140,8 +142,12 @@ const app = new Vue({
                 }
                 else return c.visible = false;
             })
-        }
+        },
 
+        toggleDropDown(index) {
+            this.isClicked = !this.isClicked
+            this.currentMessage = index;
+        }
     },
     computed: {
         // ? Versione senza keyup nel input
