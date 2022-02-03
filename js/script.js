@@ -136,7 +136,7 @@ const app = new Vue({
         },
 
         searchContact() {
-            return this.contacts.filter(c => {
+            return this.contacts.map(c => {
                 if (c.name.toLowerCase().includes(this.findContact.toLowerCase())) {
                     return c.visible = true;
                 }
@@ -156,7 +156,7 @@ const app = new Vue({
                 return true
             })
             this.isClicked = false;
-        }
+        },
 
 
     },
@@ -164,7 +164,7 @@ const app = new Vue({
         // ? Versione senza keyup nel input
 
         /* searchContact() {
-            return this.contacts.filter(c => {
+            return this.contacts.map(c => {
                 if (c.name.toLowerCase().includes(this.findContact.toLowerCase())) {
                     return c.visible = true;
                 }
