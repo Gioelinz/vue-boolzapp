@@ -150,7 +150,7 @@ const app = new Vue({
         },
 
         deleteMsg(index) {
-
+            window.confirm('Vuoi cancellare il messaggio?')
             this.contacts[this.currentIndex].messages = this.contacts[this.currentIndex].messages.filter((item, i) => {
                 if (index === i) return false
                 return true
